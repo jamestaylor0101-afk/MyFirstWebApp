@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+
     <title>Tottenham Hotspur Player Database</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -20,15 +21,26 @@
 
         <section class="players">
 
-            <h2>Players</h2>
+            <h2>Select a Player</h2>
 
-            <ul>
-                <li>Savio</li>
-                <li>James Maddison</li>
-                <li>Dejan Kulusevski</li>
-                <li>Omar Marmoush</li>
-                <li>Micky van de Ven</li>
-            </ul>
+            <form>
+
+                <label for="player">Choose a player:</label>
+
+                <select id="player" name="player">
+
+                    <option value="">-- Select a player --</option>
+                    <option value="savio">Savio</option>
+                    <option value="maddison">James Maddison</option>
+                    <option value="kulusevski">Dejan Kulusevski</option>
+                    <option value="marmoush">Omar Marmoush</option>
+                    <option value="vanderven">Micky van de Ven</option>
+
+                </select>
+
+                <button type="submit">View Player</button>
+
+            </form>
 
         </section>
 
