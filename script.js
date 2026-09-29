@@ -1,4 +1,4 @@
-// Player information
+// Player info
 const players = {
     savio: {
         name: "Savio",
@@ -32,45 +32,59 @@ const players = {
 };
 
 
-// Get the form
-const form = document.querySelector("form");
-
-// Get the player selection
-const playerSelect = document.querySelector("#player");
-
-// Get the player information section
-const playerInformation = document.querySelector(".player-information");
+// DOM finds elements
+const form = document.getElementById("player-form");
+const playerSelect = document.getElementById("player");
+const playerInformation = document.getElementById("player-information");
 
 
-// Run when the form is submitted
+
 form.addEventListener("submit", function (event) {
 
-    // Stop the page from refreshing
+    // Stop page refresh
     event.preventDefault();
 
-    // Get the selected player
+
     const selectedPlayer = playerSelect.value;
 
-    // Check that a player has been selected
+    // Clear previous info
+    playerInformation.innerHTML = "";
+
+    // Check selection
     if (selectedPlayer === "") {
 
-        playerInformation.innerHTML = `
-            <h2>Player Information</h2>
-            <p>Please select a player.</p>
-        `;
+        const heading = document.createElement("h2");
+        heading.textContent = "Player Information";
+
+        const message = document.createElement("p");
+        message.textContent = "Please select a player.";
+
+        playerInformation.appendChild(heading);
+        playerInformation.appendChild(message);
 
         return;
     }
 
-    // Get information about the selected player
+    // Get player info
     const player = players[selectedPlayer];
 
-    // Display the player information
-    playerInformation.innerHTML = `
-        <h2>Player Information</h2>
-        <h3>${player.name}</h3>
-        <p><strong>Position:</strong> ${player.position}</p>
-        <p><strong>Nationality:</strong> ${player.nationality}</p>
-    `;
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Player Information";
+
+    const name = document.createElement("h3");
+    name.textContent = player.name;
+
+    const position = document.createElement("p");
+    position.textContent = "Position: " + player.position;
+
+    const nationality = document.createElement("p");
+    nationality.textContent = "Nationality: " + player.nationality;
+
+    // Add the new player elements
+    playerInformation.appendChild(heading);
+    playerInformation.appendChild(name);
+    playerInformation.appendChild(position);
+    playerInformation.appendChild(nationality);
 
 });
