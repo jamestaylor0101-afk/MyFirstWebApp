@@ -9,7 +9,7 @@ body {
     color: #333;
 }
 
-/* Header */
+
 header {
     background-color: #132257;
     color: white;
@@ -26,7 +26,6 @@ header p {
     margin: 10px 0 0;
 }
 
-/* Main content */
 main {
     width: 90%;
     max-width: 1200px;
@@ -40,7 +39,6 @@ main {
     gap: 30px;
 }
 
-/* Sections */
 .players,
 .player-information {
     padding: 10px;
@@ -71,7 +69,6 @@ li:hover {
     cursor: pointer;
 }
 
-/* Footer */
 footer {
     background-color: #132257;
     color: white;
