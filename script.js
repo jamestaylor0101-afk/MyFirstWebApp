@@ -83,7 +83,7 @@ function getPlayerFromAPI(playerName) {
     const url =
         "https://v3.football.api-sports.io/players?search="
         + encodeURIComponent(playerName)
-        + "&season=2025";
+        + "&season=2024";
 
 
     fetch(url, {
