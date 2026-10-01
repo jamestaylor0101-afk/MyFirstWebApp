@@ -44,7 +44,7 @@ const players = {
     },
 
     son: {
-        name: "Son"
+        name: "Heung-Min Son"
     }
 
 };
