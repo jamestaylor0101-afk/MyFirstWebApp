@@ -51,7 +51,10 @@ function getPlayerFromAPI(playerName) {
 
             if (data.results === 0) {
 
-                playerInformation.innerHTML = "<p>Player not found.</p>";
+                console.log("No player found");
+                console.log(data);
+
+                playerInformation.innerHTML = "<p>No player found.</p>";
 
                 return;
             }
