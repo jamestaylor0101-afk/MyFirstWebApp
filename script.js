@@ -9,7 +9,7 @@ const players = {
     },
 
     maddison: {
-        name: "James Maddison",
+        name: "Maddison",
         position: "Midfielder",
         nationality: "England"
     },
