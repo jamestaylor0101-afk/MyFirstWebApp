@@ -31,6 +31,21 @@ const players = {
     }
 };
 
+const API_KEY = "d64fd4d72449c41633d193c846a49a06";
+
+fetch("https://v3.football.api-sports.io/players?search=Maddison&season=2025", {
+    method: "GET",
+    headers: {
+        "x-apisports-key": API_KEY
+    }
+})
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log("Error:", error);
+    });
 
 // DOM finds elements
 const form = document.getElementById("player-form");
