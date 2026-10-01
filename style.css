@@ -50,6 +50,26 @@ h2 {
     padding-bottom: 5px;
 }
 
+/* Player selection form */
+
+#player-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#player {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#player-form button {
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 /* Player list */
 ul {
     padding: 0;

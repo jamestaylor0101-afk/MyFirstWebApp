@@ -2,35 +2,51 @@
 const API_KEY = "d64fd4d72449c41633d193c846a49a06";
 
 const players = {
-    savio: {
-        name: "Savio",
-        position: "Forward",
-        nationality: "Brazil"
+
+    lloris: {
+        name: "Lloris"
     },
 
-    maddison: {
-        name: "Maddison",
-        position: "Midfielder",
-        nationality: "England"
+    emerson: {
+        name: "Emerson"
+    },
+
+    romero: {
+        name: "Romero"
+    },
+
+    dier: {
+        name: "Dier"
+    },
+
+    davies: {
+        name: "Davies"
+    },
+
+    perisic: {
+        name: "Perisic"
+    },
+
+    hojbjerg: {
+        name: "Hojbjerg"
+    },
+
+    bentancur: {
+        name: "Bentancur"
     },
 
     kulusevski: {
-        name: "Dejan Kulusevski",
-        position: "Midfielder",
-        nationality: "Sweden"
+        name: "Kulusevski"
     },
 
-    marmoush: {
-        name: "Omar Marmoush",
-        position: "Forward",
-        nationality: "Egypt"
+    kane: {
+        name: "Kane"
     },
 
-    vanderven: {
-        name: "Micky van de Ven",
-        position: "Defender",
-        nationality: "Netherlands"
+    son: {
+        name: "Son"
     }
+
 };
 
 
@@ -82,7 +98,7 @@ function getPlayerFromAPI(playerName) {
 
     const url =
         "https://v3.football.api-sports.io/players?team=47"
-        + "&season=2024"
+        + "&season=2022"
         + "&search=" + encodeURIComponent(playerName);
 
 
