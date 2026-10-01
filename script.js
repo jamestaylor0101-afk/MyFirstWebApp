@@ -124,6 +124,8 @@ function getPlayerFromAPI(playerName) {
             // Get the player from the API response
             const player = data.response[0].player;
 
+            const stats = data.response[0].statistics[0];
+
 
             // Clear the previous information
             playerInformation.innerHTML = "";
@@ -147,12 +149,32 @@ function getPlayerFromAPI(playerName) {
             age.textContent =
                 "Age: " + player.age;
 
+            const team = document.createElement("p");
+            team.textContent = "Team: " + stats.team.name;
+
+            const position = document.createElement("p");
+            position.textContent = "Position: " + stats.games.position;
+
+            const appearances = document.createElement("p");
+            appearances.textContent = "Appearances: " + stats.games.appearences;
+
+            const goals = document.createElement("p");
+            goals.textContent = "Goals: " + stats.goals.total;
+
+            const assists = document.createElement("p");
+            assists.textContent = "Assists: " + stats.goals.assists;
+
 
             // Add the elements to the webpage
             playerInformation.appendChild(heading);
             playerInformation.appendChild(name);
             playerInformation.appendChild(nationality);
             playerInformation.appendChild(age);
+            playerInformation.appendChild(team);
+            playerInformation.appendChild(position);
+            playerInformation.appendChild(appearances);
+            playerInformation.appendChild(goals);
+            playerInformation.appendChild(assists);
 
         })
 
