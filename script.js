@@ -1,6 +1,10 @@
 // Player info
 const API_KEY = "d64fd4d72449c41633d193c846a49a06";
 
+$(document).ready(function () {
+    console.log("jQuery is working");
+});
+
 const players = {
 
     lloris: {
