@@ -1,10 +1,6 @@
 // Player info
 const API_KEY = "d64fd4d72449c41633d193c846a49a06";
 
-$(document).ready(function () {
-    console.log("jQuery is working");
-});
-
 const players = {
 
     lloris: {
@@ -60,38 +56,24 @@ const playerSelect = document.getElementById("player");
 const playerInformation = document.getElementById("player-information");
 
 
-// Run when the form is submitted
-form.addEventListener("submit", function (event) {
+$("#player-form").submit(function (event) {
 
-    // Stop the page from refreshing
     event.preventDefault();
 
-    // Get the selected player
-    const selectedPlayer = playerSelect.value;
+    const selectedPlayer = $("#player").val();
 
-    // Check that a player has been selected
     if (selectedPlayer === "") {
 
-        playerInformation.innerHTML = "";
-
-        const heading = document.createElement("h2");
-        heading.textContent = "Player Information";
-
-        const message = document.createElement("p");
-        message.textContent = "Please select a player.";
-
-        playerInformation.appendChild(heading);
-        playerInformation.appendChild(message);
+        $("#player-information").html(
+            "<h2>Player Information</h2>" +
+            "<p>Please select a player.</p>"
+        );
 
         return;
     }
 
-
-    // Get the player's name
     const playerName = players[selectedPlayer].name;
 
-
-    // Get player information from the API
     getPlayerFromAPI(playerName);
 
 });
@@ -99,6 +81,11 @@ form.addEventListener("submit", function (event) {
 
 // Function to get player information from API-Football
 function getPlayerFromAPI(playerName) {
+
+    $("#player-information").html(
+        "<h2>Player Information</h2>" +
+        "<p>Loading player information...</p>"
+    );
 
     const url =
         "https://v3.football.api-sports.io/players?team=47"
@@ -146,9 +133,9 @@ function getPlayerFromAPI(playerName) {
 
             const stats = data.response[0].statistics[0];
 
-
-            // Clear the previous information
-            playerInformation.innerHTML = "";
+            // Clear player info
+            $("#player-information").hide();
+            $("#player-information").empty();
 
 
             // Create the HTML elements using the DOM
@@ -196,7 +183,10 @@ function getPlayerFromAPI(playerName) {
             playerInformation.appendChild(goals);
             playerInformation.appendChild(assists);
 
+            $("#player-information").fadeIn(600);
+
         })
+
 
 
         .catch(error => {
